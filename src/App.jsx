@@ -2591,7 +2591,23 @@ function SimpleLogin({ onLogin }) {
       <style>{css}</style>
       <div className="login-page">
         <div className="login-card">
-          <div className="brand-name" style={{ fontSize:18, marginBottom:24 }}>PRIMED &amp; <span style={{ color:"#FF6B1A" }}>BOOKED</span></div>
+          <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:14, marginBottom:28 }}>
+            <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="none" stroke="#FF6B1A" strokeWidth="6" strokeLinejoin="round"/>
+              <g transform="translate(-2.5 4)">
+                <path d="M28 54 L41 66 L60 45" stroke="#FF6B1A" strokeWidth="9" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                <g transform="translate(60 45) rotate(-47)">
+                  <path d="M14.5 -3 C17 -2.6 19 -2.4 21 -2.8 C24 -3.4 27 -3.6 28 -2.4 Q29.5 0 28 2.4 C27 3.6 24 3.4 21 2.8 C19 2.4 17 2.6 14.5 3 Z" fill="#F2EFE9"/>
+                  <circle cx="26" cy="0" r="0.9" fill="#1A1C1F"/>
+                  <rect x="8" y="-5.8" width="6.5" height="11.6" rx="0.8" fill="#C9CCD1"/>
+                  <path d="M10.5 -5.8 V5.8 M12.4 -5.8 V5.8" stroke="#8E939A" strokeWidth="0.7"/>
+                  <path d="M0 -5 L8 -5.5 L8 5.5 L0 5 Q-1 0 0 -5 Z" fill="#E8C48A"/>
+                  <path d="M0 -5 L4 -5.2 Q3.2 -2 4.3 0 Q5.2 2.4 4 5.2 L0 5 Q-1 0 0 -5 Z" fill="#FF6B1A"/>
+                </g>
+              </g>
+            </svg>
+            <div className="brand-name" style={{ fontSize:22 }}>PRIMED &amp; <span style={{ color:"#FF6B1A" }}>BOOKED</span></div>
+          </div>
           <div className="login-title">Enter Password</div>
           <form style={{ display:"flex", flexDirection:"column", gap:14 }} onSubmit={submit}>
             {err && <div className="login-error">{err}</div>}
