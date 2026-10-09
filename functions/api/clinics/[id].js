@@ -72,21 +72,25 @@ function wrapEmailHtml(bodyText) {
 </html>`;
 }
 
-// Sends through the Google Apps Script relay (google-apps-script/mail-relay.gs),
-// which calls GmailApp.sendEmail, executing as alignment.automations@gmail.com
-// but sending as its verified hello@alignmentautomations.com alias — this
-// makes Gmail recognize the sender as a real Google Account and show its
-// profile photo as the avatar to recipients viewing in Gmail.
+// Sends through Resend (resend.com) as hello@primedandbooked.com. The domain is
+// verified in Resend with DNS records on Cloudflare, so mail is signed for
+// primedandbooked.com; replies go to the same address, which Zoho receives.
+// RESEND_API_KEY is a secret on the Pages project and on the cron worker.
+const FROM_ADDRESS = 'Primed & Booked <hello@primedandbooked.com>';
+const REPLY_TO     = 'hello@primedandbooked.com';
+
 async function sendEmail(to, subject, body, env) {
-  if (!env.APPSSCRIPT_URL)    throw new Error('APPSSCRIPT_URL is not set');
-  if (!env.APPSSCRIPT_SECRET) throw new Error('APPSSCRIPT_SECRET is not set');
-  const res = await fetch(env.APPSSCRIPT_URL, {
+  if (!env.RESEND_API_KEY) throw new Error('RESEND_API_KEY is not set');
+  const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
-      secret: env.APPSSCRIPT_SECRET,
-      to,
-      from: env.FROM_EMAIL,
+      from: FROM_ADDRESS,
+      to: [to],
+      reply_to: REPLY_TO,
       subject: subject || '(no subject)',
       text: body || '',
       html: wrapEmailHtml(body || ''),
@@ -95,8 +99,8 @@ async function sendEmail(to, subject, body, env) {
   const raw = await res.text();
   let json = null;
   try { json = JSON.parse(raw); } catch (_) {}
-  if (!res.ok || !json?.ok) {
-    throw new Error(`Apps Script relay rejected send (HTTP ${res.status}): ${raw}`);
+  if (!res.ok || !json?.id) {
+    throw new Error(`Resend rejected send (HTTP ${res.status}): ${raw}`);
   }
   return json;
 }
