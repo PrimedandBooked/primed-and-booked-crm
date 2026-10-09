@@ -344,13 +344,13 @@ const DEFAULT_SEQUENCES = [
   { id:"seq_0", name:"Website Inquiry Follow-up", trigger:"website_inquiry", active:true, steps:[
     { id:"s0a", delay:0, delayUnit:"minutes", channel:"email",
       subject:"Got your message — here's what's next",
-      body:"Hi {{first_name}},\n\nThanks for reaching out to Primed & Booked! We received your inquiry and will be in touch shortly.\n\nIn the meantime, feel free to book a discovery call:\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hi {{first_name}},\n\nThanks for reaching out to Primed & Booked! We received your inquiry and will be in touch shortly.\n\nIn the meantime, feel free to book a discovery call:\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
     { id:"s0b", delay:1, delayUnit:"days", channel:"email",
       subject:"Quick follow-up",
-      body:"Hi {{first_name}},\n\nJust following up on your inquiry. Happy to answer any questions you have about how we can help {{business_name}}.\n\nBook a free 20-minute call:\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hi {{first_name}},\n\nJust following up on your inquiry. Happy to answer any questions you have about how we can help {{business_name}}.\n\nBook a free 20-minute call:\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
     { id:"s0c", delay:4, delayUnit:"days", channel:"email",
       subject:"Still interested?",
-      body:"Hi {{first_name}},\n\nOne last check-in. If timing isn't right or you have questions, just reply — happy to help.\n\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hi {{first_name}},\n\nOne last check-in. If timing isn't right or you have questions, just reply — happy to help.\n\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
   ]},
   // Launch manually after you send the first personalized outreach (Day 0) —
   // a video or a visual audit (marked-up screenshot), whichever you used.
@@ -367,7 +367,7 @@ const DEFAULT_SEQUENCES = [
       body:"Hey {{first_name}},\n\nI'll keep this short — the biggest thing I see costing contractors work isn't the website, it's what happens when a lead comes in and nobody's free to grab the phone.\n\nThat's the piece I'd fix first for {{business_name}}. Couple weeks to set up, then it runs on its own.\n\nHappy to show you if you're curious — just reply and I'll send the details.\n\n— Matt\nPrimed & Booked" },
     { id:"s4", delay:7, delayUnit:"days", channel:"email",
       subject:"Why I actually do this",
-      body:"Hey {{first_name}},\n\nQuick bit about me, since we haven't talked yet — I spent 15 years in the trades before this. So when I say most guys are leaving money on the table with missed calls and slow follow-up, it's because I lived it.\n\nThat's the whole reason I build these systems now. If it's ever worth a conversation for {{business_name}}, I'm here:\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hey {{first_name}},\n\nQuick bit about me, since we haven't talked yet — I spent 15 years in the trades before this. So when I say most guys are leaving money on the table with missed calls and slow follow-up, it's because I lived it.\n\nThat's the whole reason I build these systems now. If it's ever worth a conversation for {{business_name}}, I'm here:\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
     { id:"s5", delay:9, delayUnit:"days", channel:"email",
       subject:"I'll leave you be",
       body:"Hey {{first_name}},\n\nThis'll be my last one — don't want to be the guy clogging up your inbox.\n\nIf catching more of those leads ever moves up the list, you've got my email. Reach out anytime and we'll pick it right back up.\n\nAppreciate you either way.\n\n— Matt\nPrimed & Booked" },
@@ -376,13 +376,13 @@ const DEFAULT_SEQUENCES = [
   { id:"seq_2", name:"Client Onboarding Kickoff", trigger:"client_won", active:true, steps:[
     { id:"s6", delay:0, delayUnit:"minutes", channel:"email",
       subject:"Welcome aboard — here's what happens next",
-      body:"Hi {{first_name}},\n\nWelcome to Primed & Booked! Here's exactly what happens from here:\n\n1. Kickoff call (30 min) — we'll cover your services, service area, and the handful of details the phone carriers need before your system can send texts.\n2. Days 2–8 — I build everything: your website, booking calendar, missed-call text-back, and follow-up emails. Nothing needed from you.\n3. Days 9–11 — you review a preview link and tell me what to change.\n4. Day 12 — your website goes live.\n5. Within about a week of launch — missed-call text-back switches on once the carriers approve registration.\n\nYour full onboarding guide, with everything to have ready for the kickoff call:\n" + ONBOARDING_DOC_URL + "\n\nBook the kickoff call here:\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hi {{first_name}},\n\nWelcome to Primed & Booked! Here's exactly what happens from here:\n\n1. Kickoff call (30 min) — we'll cover your services, service area, and the handful of details the phone carriers need before your system can send texts.\n2. Days 2–8 — I build everything: your website, booking calendar, missed-call text-back, and follow-up emails. Nothing needed from you.\n3. Days 9–11 — you review a preview link and tell me what to change.\n4. Day 12 — your website goes live.\n5. Within about a week of launch — missed-call text-back switches on once the carriers approve registration.\n\nYour full onboarding guide, with everything to have ready for the kickoff call:\n" + ONBOARDING_DOC_URL + "\n\nBook the kickoff call here:\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
   ]},
   // Long-tail nurture for prospects who go quiet after a demo, or lost deals worth revisiting later.
   { id:"seq_3", name:"Gone Quiet — Long-term Nurture", trigger:"no_activity", active:false, steps:[
     { id:"s7", delay:30, delayUnit:"days",   channel:"email",
       subject:"Still here if you need us",
-      body:"Hi {{first_name}},\n\nJust checking in on {{business_name}} — if you have questions or want to explore what's possible, I'm available for a quick call.\n\nhttps://cal.com/primedandbooked/20min\n\n— Matt\nPrimed & Booked" },
+      body:"Hi {{first_name}},\n\nJust checking in on {{business_name}} — if you have questions or want to explore what's possible, I'm available for a quick call.\n\nhttps://cal.com/primed-and-booked/20min\n\n— Matt\nPrimed & Booked" },
     { id:"s8", delay:45, delayUnit:"days",   channel:"email",
       subject:"One last check-in",
       body:"Hi {{first_name}},\n\nThis will be my last follow-up for now. If timing is ever right to revisit things for {{business_name}}, I'd love to reconnect.\n\n— Matt\nPrimed & Booked" },
