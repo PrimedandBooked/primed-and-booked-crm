@@ -60,7 +60,7 @@ const STAGE_DOT = {
 };
 
 // Client Onboarding doc, hosted for linking from the client_won email.
-const ONBOARDING_DOC_URL = "https://app.alignmentautomations.com/client-onboarding.pdf";
+const ONBOARDING_DOC_URL = "https://app.primedandbooked.com/client-onboarding.pdf";
 
 const STAGE_AUTO_TRIGGER = {
   yes_closed_won:  "client_won",   // auto-fires the onboarding email — no confirmation
@@ -106,7 +106,7 @@ const MODULES = {
       { name:"Set conditional call forwarding at your carrier (busy / no-answer / unreachable)", done:false, section:"Phase 5 · SMS Go-Live" },
       { name:"Walk through the full text-back loop together on a call", done:false, section:"Phase 5 · SMS Go-Live" },
     ],
-    // (You) — Alignment Automations delivery (from the Internal Ops Manual)
+    // (You) — Primed & Booked delivery (from the Internal Ops Manual)
     alignment: [
       { name:"Run phone-number triage — confirm what you can promise", done:false, section:"Phase 0 · Sales Qualification" },
       { name:"Check disqualifiers (already SMS-enabled, outside US/CA, on another Twilio voice account)", done:false, section:"Phase 0 · Sales Qualification" },
@@ -344,13 +344,13 @@ const DEFAULT_SEQUENCES = [
   { id:"seq_0", name:"Website Inquiry Follow-up", trigger:"website_inquiry", active:true, steps:[
     { id:"s0a", delay:0, delayUnit:"minutes", channel:"email",
       subject:"Got your message — here's what's next",
-      body:"Hi {{first_name}},\n\nThanks for reaching out to Alignment Automations! We received your inquiry and will be in touch shortly.\n\nIn the meantime, feel free to book a discovery call:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nThanks for reaching out to Primed & Booked! We received your inquiry and will be in touch shortly.\n\nIn the meantime, feel free to book a discovery call:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
     { id:"s0b", delay:1, delayUnit:"days", channel:"email",
       subject:"Quick follow-up",
-      body:"Hi {{first_name}},\n\nJust following up on your inquiry. Happy to answer any questions you have about how we can help {{business_name}}.\n\nBook a free 20-minute call:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nJust following up on your inquiry. Happy to answer any questions you have about how we can help {{business_name}}.\n\nBook a free 20-minute call:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
     { id:"s0c", delay:4, delayUnit:"days", channel:"email",
       subject:"Still interested?",
-      body:"Hi {{first_name}},\n\nOne last check-in. If timing isn't right or you have questions, just reply — happy to help.\n\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nOne last check-in. If timing isn't right or you have questions, just reply — happy to help.\n\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
   ]},
   // Launch manually after you send the first personalized outreach (Day 0) —
   // a video or a visual audit (marked-up screenshot), whichever you used.
@@ -358,34 +358,34 @@ const DEFAULT_SEQUENCES = [
   { id:"seq_1", name:"Prospect Follow-up (Day 3–30)", trigger:"prospect_outreach", active:true, steps:[
     { id:"s1", delay:3, delayUnit:"days", channel:"email",
       subject:"Did that come through?",
-      body:"Hey {{first_name}},\n\nJust circling back on what I sent over — wanted to make sure it didn't get buried in the inbox.\n\nNo pressure at all. If any of it looked useful, just hit reply and let me know — happy to walk you through it.\n\n— Matthew\nAlignment Automations" },
+      body:"Hey {{first_name}},\n\nJust circling back on what I sent over — wanted to make sure it didn't get buried in the inbox.\n\nNo pressure at all. If any of it looked useful, just hit reply and let me know — happy to walk you through it.\n\n— Matthew\nPrimed & Booked" },
     { id:"s2", delay:4, delayUnit:"days", channel:"email",
       subject:"What this looked like for another contractor",
-      body:"Hey {{first_name}},\n\nFiguring the timing might just not be right, and that's fair.\n\nFigured I'd share a quick example instead. I set this up for another local contractor who kept losing calls after hours — now every missed call gets an instant text back, and he's booking a handful of extra jobs a month from leads that used to just disappear.\n\nIf you want to see how it'd work for {{business_name}}, just reply and I'll walk you through it.\n\n— Matthew\nAlignment Automations" },
+      body:"Hey {{first_name}},\n\nFiguring the timing might just not be right, and that's fair.\n\nFigured I'd share a quick example instead. I set this up for another local contractor who kept losing calls after hours — now every missed call gets an instant text back, and he's booking a handful of extra jobs a month from leads that used to just disappear.\n\nIf you want to see how it'd work for {{business_name}}, just reply and I'll walk you through it.\n\n— Matthew\nPrimed & Booked" },
     { id:"s3", delay:7, delayUnit:"days", channel:"email",
       subject:"One quick thought",
-      body:"Hey {{first_name}},\n\nI'll keep this short — the biggest thing I see costing contractors work isn't the website, it's what happens when a lead comes in and nobody's free to grab the phone.\n\nThat's the piece I'd fix first for {{business_name}}. Couple weeks to set up, then it runs on its own.\n\nHappy to show you if you're curious — just reply and I'll send the details.\n\n— Matthew\nAlignment Automations" },
+      body:"Hey {{first_name}},\n\nI'll keep this short — the biggest thing I see costing contractors work isn't the website, it's what happens when a lead comes in and nobody's free to grab the phone.\n\nThat's the piece I'd fix first for {{business_name}}. Couple weeks to set up, then it runs on its own.\n\nHappy to show you if you're curious — just reply and I'll send the details.\n\n— Matthew\nPrimed & Booked" },
     { id:"s4", delay:7, delayUnit:"days", channel:"email",
       subject:"Why I actually do this",
-      body:"Hey {{first_name}},\n\nQuick bit about me, since we haven't talked yet — I spent 15 years in the trades before this. So when I say most guys are leaving money on the table with missed calls and slow follow-up, it's because I lived it.\n\nThat's the whole reason I build these systems now. If it's ever worth a conversation for {{business_name}}, I'm here:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hey {{first_name}},\n\nQuick bit about me, since we haven't talked yet — I spent 15 years in the trades before this. So when I say most guys are leaving money on the table with missed calls and slow follow-up, it's because I lived it.\n\nThat's the whole reason I build these systems now. If it's ever worth a conversation for {{business_name}}, I'm here:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
     { id:"s5", delay:9, delayUnit:"days", channel:"email",
       subject:"I'll leave you be",
-      body:"Hey {{first_name}},\n\nThis'll be my last one — don't want to be the guy clogging up your inbox.\n\nIf catching more of those leads ever moves up the list, you've got my email. Reach out anytime and we'll pick it right back up.\n\nAppreciate you either way.\n\n— Matthew\nAlignment Automations" },
+      body:"Hey {{first_name}},\n\nThis'll be my last one — don't want to be the guy clogging up your inbox.\n\nIf catching more of those leads ever moves up the list, you've got my email. Reach out anytime and we'll pick it right back up.\n\nAppreciate you either way.\n\n— Matthew\nPrimed & Booked" },
   ]},
   // Auto-fires the moment a deal is marked Won or moved to Onboarding.
   { id:"seq_2", name:"Client Onboarding Kickoff", trigger:"client_won", active:true, steps:[
     { id:"s6", delay:0, delayUnit:"minutes", channel:"email",
       subject:"Welcome aboard — here's what happens next",
-      body:"Hi {{first_name}},\n\nWelcome to Alignment Automations! Here's exactly what happens from here:\n\n1. Kickoff call (30 min) — we'll cover your services, service area, and the handful of details the phone carriers need before your system can send texts.\n2. Days 2–8 — I build everything: your website, booking calendar, missed-call text-back, and follow-up emails. Nothing needed from you.\n3. Days 9–11 — you review a preview link and tell me what to change.\n4. Day 12 — your website goes live.\n5. Within about a week of launch — missed-call text-back switches on once the carriers approve registration.\n\nYour full onboarding guide, with everything to have ready for the kickoff call:\n" + ONBOARDING_DOC_URL + "\n\nBook the kickoff call here:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nWelcome to Primed & Booked! Here's exactly what happens from here:\n\n1. Kickoff call (30 min) — we'll cover your services, service area, and the handful of details the phone carriers need before your system can send texts.\n2. Days 2–8 — I build everything: your website, booking calendar, missed-call text-back, and follow-up emails. Nothing needed from you.\n3. Days 9–11 — you review a preview link and tell me what to change.\n4. Day 12 — your website goes live.\n5. Within about a week of launch — missed-call text-back switches on once the carriers approve registration.\n\nYour full onboarding guide, with everything to have ready for the kickoff call:\n" + ONBOARDING_DOC_URL + "\n\nBook the kickoff call here:\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
   ]},
   // Long-tail nurture for prospects who go quiet after a demo, or lost deals worth revisiting later.
   { id:"seq_3", name:"Gone Quiet — Long-term Nurture", trigger:"no_activity", active:false, steps:[
     { id:"s7", delay:30, delayUnit:"days",   channel:"email",
       subject:"Still here if you need us",
-      body:"Hi {{first_name}},\n\nJust checking in on {{business_name}} — if you have questions or want to explore what's possible, I'm available for a quick call.\n\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nJust checking in on {{business_name}} — if you have questions or want to explore what's possible, I'm available for a quick call.\n\nhttps://cal.com/alignment-automations/20min\n\n— Matthew\nPrimed & Booked" },
     { id:"s8", delay:45, delayUnit:"days",   channel:"email",
       subject:"One last check-in",
-      body:"Hi {{first_name}},\n\nThis will be my last follow-up for now. If timing is ever right to revisit things for {{business_name}}, I'd love to reconnect.\n\n— Matthew\nAlignment Automations" },
+      body:"Hi {{first_name}},\n\nThis will be my last follow-up for now. If timing is ever right to revisit things for {{business_name}}, I'd love to reconnect.\n\n— Matthew\nPrimed & Booked" },
   ]},
 ];
 
@@ -569,7 +569,7 @@ function escapeHtml(s) {
 }
 function textToHtml(text) {
   let out = escapeHtml(text || "");
-  out = out.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" style="color:#0066CC;text-decoration:underline;">$1</a>');
+  out = out.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" style="color:#B8460F;text-decoration:underline;">$1</a>');
   return out.replace(/\n/g, "<br>");
 }
 function wrapEmailHtml(bodyText) {
@@ -579,23 +579,23 @@ function wrapEmailHtml(bodyText) {
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
   </head>
-  <body style="margin:0;padding:0;background:#F4F7FB;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F7FB;padding:32px 16px;">
+  <body style="margin:0;padding:0;background:#F6F4EF;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6F4EF;padding:32px 16px;">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#FFFFFF;border:1px solid #E2E9F1;border-radius:14px;overflow:hidden;">
-          <tr><td style="padding:22px 28px;border-bottom:1px solid #E2E9F1;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#FFFFFF;border:1px solid #E6E2DA;border-radius:14px;overflow:hidden;">
+          <tr><td style="padding:22px 28px;border-bottom:1px solid #E6E2DA;">
             <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-              <td style="width:56px;height:56px;background-image:url('https://app.alignmentautomations.com/logo-email.png?v=6');background-size:52px 52px;background-repeat:no-repeat;background-position:center;text-align:center;"></td>
+              <td style="width:56px;height:56px;background-image:url('https://app.primedandbooked.com/logo-email.png?v=7');background-size:52px 52px;background-repeat:no-repeat;background-position:center;text-align:center;"></td>
               <td style="padding-left:12px;font-family:Arial,sans-serif;font-size:16px;">
-                <span style="font-weight:700;color:#1A1A1A;">Alignment</span><span style="font-weight:400;color:#0066CC;"> Automations</span>
+                <span style="font-weight:900;color:#1A1A1A;letter-spacing:0.02em;">PRIMED &amp;</span><span style="font-weight:900;color:#FF6B1A;letter-spacing:0.02em;"> BOOKED</span>
               </td>
             </tr></table>
           </td></tr>
           <tr><td style="padding:28px;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#242A2E;">
             ${textToHtml(bodyText)}
           </td></tr>
-          <tr><td style="padding:16px 28px;border-top:1px solid #E2E9F1;font-family:Arial,sans-serif;font-size:12px;color:#8A929C;">
-            Alignment Automations &middot; alignment.automations@gmail.com
+          <tr><td style="padding:16px 28px;border-top:1px solid #E6E2DA;font-family:Arial,sans-serif;font-size:12px;color:#8A929C;">
+            Primed &amp; Booked &middot; hello@primedandbooked.com
           </td></tr>
         </table>
       </td></tr>
@@ -617,7 +617,7 @@ const css = `
 
   body {
     font-family: 'Manrope', sans-serif;
-    background: #0B1121;
+    background: #111214;
     color: #f8fafc;
     -webkit-font-smoothing: antialiased;
   }
@@ -632,7 +632,7 @@ const css = `
   /* ── Sidebar (desktop) ── */
   .sidebar {
     width: 240px; min-width: 240px;
-    background: #161f32;
+    background: #1A1C1F;
     border-right: 1px solid rgba(255,255,255,0.07);
     display: flex; flex-direction: column; overflow: hidden;
   }
@@ -644,38 +644,42 @@ const css = `
   .brand-icon { width: 32px; height: 32px; flex-shrink: 0; }
   .brand-icon img { width: 100%; height: 100%; object-fit: contain; }
   .brand-text { line-height: 1.2; }
-  .brand-name { font-size: 13px; font-weight: 700; color: #f8fafc; }
+  .brand-name { font-size: 14px; font-weight: 800; letter-spacing: 0.02em; color: #F2EFE9; }
   .sidebar-nav { padding: 12px 10px; flex: 1; }
   .nav-item {
     display: flex; align-items: center; gap: 10px;
     padding: 9px 10px; border-radius: 7px; cursor: pointer;
-    font-size: 13px; font-weight: 500; color: #64748b;
+    font-size: 13px; font-weight: 500; color: #7A7D82;
     transition: all 0.15s; border: none; background: none; width: 100%; text-align: left;
     position: relative; font-family: 'Manrope', sans-serif;
   }
-  .nav-item:hover { color: #94a3b8; background: rgba(255,255,255,0.04); }
-  .nav-item.active { color: #f8fafc; background: rgba(37,99,235,0.12); }
+  .nav-item:hover { color: #A0A3A8; background: rgba(255,255,255,0.04); }
+  .nav-item.active { color: #f8fafc; background: rgba(255,107,26,0.12); }
   .nav-item.active::before {
     content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-    width: 3px; height: 60%; background: #2563eb; border-radius: 0 2px 2px 0;
+    width: 3px; height: 60%; background: #FF6B1A; border-radius: 0 2px 2px 0;
   }
   .nav-icon { opacity: 0.8; display: flex; }
+  .nav-section-label {
+    padding: 10px 10px 6px; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #5F6267;
+  }
 
   /* ── Bottom nav (mobile) ── */
   .bottom-nav {
     display: none;
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
-    background: #161f32; border-top: 1px solid rgba(255,255,255,0.07);
+    background: #1A1C1F; border-top: 1px solid rgba(255,255,255,0.07);
     padding: 8px 0 max(8px, env(safe-area-inset-bottom));
   }
   .bottom-nav-inner { display: flex; justify-content: space-around; }
   .bottom-nav-item {
     display: flex; flex-direction: column; align-items: center; gap: 3px;
     padding: 6px 24px; border: none; background: none; cursor: pointer;
-    color: #475569; font-size: 10px; font-weight: 600; font-family: 'Manrope', sans-serif;
+    color: #5F6267; font-size: 10px; font-weight: 600; font-family: 'Manrope', sans-serif;
     letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.15s;
   }
-  .bottom-nav-item.active { color: #3b82f6; }
+  .bottom-nav-item.active { color: #FF8A3D; }
   .bottom-nav-item svg { opacity: 0.9; }
 
   /* ── Main ── */
@@ -686,38 +690,38 @@ const css = `
     flex-shrink: 0;
   }
   .page-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: #f8fafc; }
-  .page-subtitle { font-size: 12px; color: #475569; margin-top: 2px; font-weight: 500; }
+  .page-subtitle { font-size: 12px; color: #5F6267; margin-top: 2px; font-weight: 500; }
   .main-content { flex: 1; overflow-y: auto; min-height: 0; padding: 20px 28px 28px; }
 
   /* ── Toolbar ── */
   .toolbar { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; }
   .search-wrap { position: relative; flex: 1; min-width: 0; }
-  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #475569; pointer-events: none; }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #5F6267; pointer-events: none; }
   .search-input {
     width: 100%; padding: 9px 12px 9px 36px;
-    background: #161f32; border: 1px solid rgba(255,255,255,0.08);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px; color: #f8fafc; font-size: 13px; font-family: 'Manrope', sans-serif;
     outline: none; transition: border-color 0.15s;
   }
-  .search-input::placeholder { color: #475569; }
-  .search-input:focus { border-color: rgba(37,99,235,0.5); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+  .search-input::placeholder { color: #5F6267; }
+  .search-input:focus { border-color: rgba(255,107,26,0.5); box-shadow: 0 0 0 3px rgba(255,107,26,0.1); }
   .filter-select {
     padding: 9px 32px 9px 12px;
-    background: #161f32; border: 1px solid rgba(255,255,255,0.08);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px; color: #f8fafc; font-size: 13px; font-family: 'Manrope', sans-serif;
     outline: none; cursor: pointer; appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237A7D82' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 10px center; min-width: 140px;
   }
 
   /* ── Buttons ── */
   .btn-primary {
     display: flex; align-items: center; gap: 6px;
-    padding: 9px 16px; background: #2563eb; color: white;
+    padding: 9px 16px; background: #FF6B1A; color: #111214;
     border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
     font-family: 'Manrope', sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.15s;
   }
-  .btn-primary:hover { background: #3b82f6; }
+  .btn-primary:hover { background: #FF8A3D; }
   .btn-success {
     display: flex; align-items: center; gap: 6px;
     padding: 9px 16px; background: #10b981; color: white;
@@ -725,30 +729,30 @@ const css = `
     font-family: 'Manrope', sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.15s;
   }
   .btn-success:hover { background: #34d399; }
-  .btn-success:disabled { background: #334155; color: #64748b; cursor: not-allowed; }
+  .btn-success:disabled { background: #41444A; color: #7A7D82; cursor: not-allowed; }
   .btn-ghost {
     display: flex; align-items: center; gap: 5px;
-    padding: 6px 10px; background: transparent; color: #64748b;
+    padding: 6px 10px; background: transparent; color: #7A7D82;
     border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; font-size: 12px;
     font-family: 'Manrope', sans-serif; cursor: pointer; transition: all 0.15s;
   }
   .btn-ghost:hover { color: #f8fafc; border-color: rgba(255,255,255,0.2); }
   .btn-danger {
     display: flex; align-items: center; padding: 6px 8px; background: transparent;
-    color: #64748b; border: none; border-radius: 5px; cursor: pointer; transition: all 0.15s;
+    color: #7A7D82; border: none; border-radius: 5px; cursor: pointer; transition: all 0.15s;
   }
   .btn-danger:hover { color: #ef4444; background: rgba(239,68,68,0.1); }
 
   /* ── Desktop Table ── */
   .table-wrap {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.07);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px; overflow: hidden;
   }
   /* Prospecting's table has no separate mobile card-list view (unlike the
      Dashboard/clinic-card-list pattern), so it can't use .table-wrap — that
      class is hidden outright on mobile below. Scroll horizontally instead. */
   .prospecting-table-wrap {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.07);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch;
   }
   .prospecting-table-wrap table { min-width: 720px; }
@@ -757,42 +761,42 @@ const css = `
   th {
     padding: 11px 16px; text-align: left;
     font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    color: #475569; background: #0d1526;
+    color: #5F6267; background: #141517;
     border-bottom: 1px solid rgba(255,255,255,0.06); white-space: nowrap;
   }
   td {
-    padding: 13px 16px; font-size: 13px; color: #cbd5e1;
+    padding: 13px 16px; font-size: 13px; color: #D2D3D5;
     border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle;
   }
   tr:last-child td { border-bottom: none; }
   tbody tr { transition: background 0.1s; }
-  tbody tr:hover td { background: rgba(30,41,59,0.6); }
+  tbody tr:hover td { background: rgba(42,45,50,0.6); }
   .clinic-name-cell { display: flex; align-items: center; gap: 8px; }
   .clinic-name-text { font-weight: 600; color: #f8fafc; }
-  .link-icon { color: #475569; cursor: pointer; transition: color 0.15s; display: flex; }
-  .link-icon:hover { color: #3b82f6; }
+  .link-icon { color: #5F6267; cursor: pointer; transition: color 0.15s; display: flex; }
+  .link-icon:hover { color: #FF8A3D; }
   .contact-name { font-weight: 500; color: #f8fafc; }
-  .contact-email { font-size: 11px; color: #475569; margin-top: 1px; }
+  .contact-email { font-size: 11px; color: #5F6267; margin-top: 1px; }
   .actions-cell { display: flex; align-items: center; gap: 4px; opacity: 0; transition: opacity 0.15s; }
   tbody tr:hover .actions-cell { opacity: 1; }
 
   /* ── Mobile Card List ── */
   .clinic-card-list { display: none; flex-direction: column; gap: 8px; }
   .clinic-list-card {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.07);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px; padding: 14px 16px;
     display: flex; align-items: center; gap: 12px;
     cursor: pointer; transition: background 0.1s;
   }
-  .clinic-list-card:active { background: rgba(30,41,59,0.8); }
+  .clinic-list-card:active { background: rgba(42,45,50,0.8); }
   .clinic-list-card-icon {
-    width: 38px; height: 38px; background: rgba(37,99,235,0.15);
+    width: 38px; height: 38px; background: rgba(255,107,26,0.15);
     border-radius: 9px; display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; color: #3b82f6; font-size: 16px;
+    flex-shrink: 0; color: #FF8A3D; font-size: 16px;
   }
   .clinic-list-card-body { flex: 1; min-width: 0; }
   .clinic-list-card-name { font-size: 14px; font-weight: 600; color: #f8fafc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .clinic-list-card-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .clinic-list-card-sub { font-size: 12px; color: #7A7D82; margin-top: 2px; }
   .clinic-list-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
 
   /* ── Status badges ── */
@@ -810,7 +814,7 @@ const css = `
   .status-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
   .status-dropdown {
     position: absolute; top: calc(100% + 6px); left: 0; z-index: 50;
-    background: #1e293b; border: 1px solid rgba(255,255,255,0.12);
+    background: #24272B; border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     overflow: hidden; min-width: 190px;
     animation: dropIn 0.12s ease;
@@ -819,66 +823,66 @@ const css = `
   .status-option {
     display: flex; align-items: center; gap: 8px;
     padding: 10px 12px; cursor: pointer; font-size: 12px; font-weight: 500;
-    color: #cbd5e1; transition: background 0.1s; border: none; background: none;
+    color: #D2D3D5; transition: background 0.1s; border: none; background: none;
     width: 100%; text-align: left;
   }
   .status-option:hover { background: rgba(255,255,255,0.06); color: #f8fafc; }
-  .status-option.active { color: #f8fafc; background: rgba(37,99,235,0.15); }
+  .status-option.active { color: #f8fafc; background: rgba(255,107,26,0.15); }
   .status-option-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
   /* ── Empty state ── */
   .empty-state {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 60px 20px; color: #475569; text-align: center;
+    padding: 60px 20px; color: #5F6267; text-align: center;
   }
   .empty-icon { font-size: 36px; margin-bottom: 12px; opacity: 0.4; }
-  .empty-title { font-size: 14px; font-weight: 600; color: #64748b; }
+  .empty-title { font-size: 14px; font-weight: 600; color: #7A7D82; }
   .empty-sub { font-size: 12px; margin-top: 4px; }
 
   /* ── Pipeline ── */
   .pipeline-list { display: flex; flex-direction: column; gap: 2px; }
   .stage-row {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.07);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.07);
     border-radius: 8px; overflow: hidden; transition: border-color 0.15s, background 0.15s;
   }
-  .stage-row.drag-over { border-color: #2563eb; background: rgba(37,99,235,0.05); }
+  .stage-row.drag-over { border-color: #FF6B1A; background: rgba(255,107,26,0.05); }
   .stage-header {
     display: flex; align-items: center; gap: 12px;
     padding: 14px 18px; cursor: pointer; user-select: none; transition: background 0.1s;
   }
-  .stage-header:hover { background: rgba(30,41,59,0.5); }
-  .stage-chevron { color: #475569; transition: transform 0.2s; flex-shrink: 0; display: flex; }
+  .stage-header:hover { background: rgba(42,45,50,0.5); }
+  .stage-chevron { color: #5F6267; transition: transform 0.2s; flex-shrink: 0; display: flex; }
   .stage-chevron.open { transform: rotate(90deg); }
   .stage-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .stage-label { font-size: 13px; font-weight: 600; color: #cbd5e1; flex: 1; }
+  .stage-label { font-size: 13px; font-weight: 600; color: #D2D3D5; flex: 1; }
   .stage-count {
     min-width: 22px; height: 22px; padding: 0 7px;
-    background: #2563eb; color: white; border-radius: 11px;
+    background: #FF6B1A; color: #111214; border-radius: 11px;
     font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
   }
-  .stage-count.zero { background: rgba(255,255,255,0.06); color: #475569; }
+  .stage-count.zero { background: rgba(255,255,255,0.06); color: #5F6267; }
   .stage-cards { padding: 4px 12px 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-  .stage-drop-hint { padding: 8px 18px 12px; font-size: 11px; color: #334155; font-style: italic; }
+  .stage-drop-hint { padding: 8px 18px 12px; font-size: 11px; color: #41444A; font-style: italic; }
 
   .clinic-card {
-    background: #0B1121; border: 1px solid rgba(255,255,255,0.08);
+    background: #111214; border: 1px solid rgba(255,255,255,0.08);
     border-left: 3px solid; border-radius: 7px; padding: 12px 14px;
     min-width: 200px; max-width: 260px;
     transition: all 0.15s; display: flex; align-items: flex-start; gap: 10px;
     cursor: grab;
   }
   .clinic-card:active { cursor: grabbing; }
-  .clinic-card:hover { border-color: rgba(37,99,235,0.5); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .clinic-card:hover { border-color: rgba(255,107,26,0.5); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
   .clinic-card.dragging { opacity: 0.35; transform: scale(0.97); }
   .card-icon {
-    width: 32px; height: 32px; background: rgba(37,99,235,0.15);
+    width: 32px; height: 32px; background: rgba(255,107,26,0.15);
     border-radius: 7px; display: flex; align-items: center; justify-content: center;
-    font-size: 14px; flex-shrink: 0; color: #3b82f6;
+    font-size: 14px; flex-shrink: 0; color: #FF8A3D;
   }
   .card-info { flex: 1; min-width: 0; }
   .card-name { font-size: 13px; font-weight: 600; color: #f8fafc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .card-contact { font-size: 11px; color: #64748b; margin-top: 2px; }
-  .card-date { font-size: 10px; color: #475569; margin-top: 3px; font-family: 'JetBrains Mono', monospace; }
+  .card-contact { font-size: 11px; color: #7A7D82; margin-top: 2px; }
+  .card-date { font-size: 10px; color: #5F6267; margin-top: 3px; font-family: 'JetBrains Mono', monospace; }
 
   /* ── Modal ── */
   .modal-overlay {
@@ -887,7 +891,7 @@ const css = `
     display: flex; align-items: center; justify-content: center; padding: 16px;
   }
   .modal {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.1);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
     box-shadow: 0 24px 48px rgba(0,0,0,0.6); animation: modalIn 0.2s ease;
   }
@@ -895,11 +899,11 @@ const css = `
   .modal-header {
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.07);
-    position: sticky; top: 0; background: #161f32; z-index: 1;
+    position: sticky; top: 0; background: #1A1C1F; z-index: 1;
   }
   .modal-title { font-size: 16px; font-weight: 700; color: #f8fafc; }
   .modal-close {
-    background: none; border: none; color: #475569; cursor: pointer;
+    background: none; border: none; color: #5F6267; cursor: pointer;
     padding: 4px; border-radius: 5px; transition: all 0.15s; font-size: 18px; line-height: 1;
   }
   .modal-close:hover { color: #f8fafc; background: rgba(255,255,255,0.07); }
@@ -907,7 +911,7 @@ const css = `
   .modal-footer {
     padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.07);
     display: flex; justify-content: flex-end; gap: 10px;
-    position: sticky; bottom: 0; background: #161f32;
+    position: sticky; bottom: 0; background: #1A1C1F;
   }
 
   /* Launch modal — trigger picker */
@@ -917,7 +921,7 @@ const css = `
   .trigger-btn {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; gap: 4px; min-height: 92px; padding: 16px 12px;
-    background: #0B1121; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+    background: #111214; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
     cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: 'Manrope', sans-serif;
   }
   .trigger-btn:hover { background: rgba(255,255,255,0.03); }
@@ -927,22 +931,22 @@ const css = `
 
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569; }
+  .form-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #5F6267; }
   .form-input, .form-select, .form-textarea {
     padding: 10px 12px;
-    background: #0B1121; border: 1px solid rgba(255,255,255,0.1);
+    background: #111214; border: 1px solid rgba(255,255,255,0.1);
     border-radius: 7px; color: #f8fafc; font-size: 14px; font-family: 'Manrope', sans-serif;
     outline: none; transition: border-color 0.15s, box-shadow 0.15s; width: 100%;
   }
-  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(37,99,235,0.5); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(255,107,26,0.5); box-shadow: 0 0 0 3px rgba(255,107,26,0.1); }
   .form-select { appearance: none; cursor: pointer; }
   .form-textarea { resize: vertical; line-height: 1.5; }
-  .form-input::placeholder, .form-textarea::placeholder { color: #334155; }
+  .form-input::placeholder, .form-textarea::placeholder { color: #41444A; }
 
   /* ── Toast ── */
   .toast {
     position: fixed; bottom: 80px; right: 16px; z-index: 200;
-    background: #1e293b; border: 1px solid rgba(255,255,255,0.12);
+    background: #24272B; border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #f8fafc;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4); animation: toastIn 0.2s ease; max-width: 280px;
   }
@@ -954,96 +958,96 @@ const css = `
     backdrop-filter: blur(3px); z-index: 80; display: flex; justify-content: flex-end;
   }
   .detail-panel {
-    width: 440px; background: #161f32; border-left: 1px solid rgba(255,255,255,0.08);
+    width: 440px; background: #1A1C1F; border-left: 1px solid rgba(255,255,255,0.08);
     height: 100%; overflow-y: auto; display: flex; flex-direction: column; animation: slideIn 0.2s ease;
   }
   @keyframes slideIn { from { transform: translateX(20px); opacity: 0; } to { transform: none; opacity: 1; } }
   .detail-header {
     padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.07);
     display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
-    position: sticky; top: 0; background: #161f32; z-index: 1;
+    position: sticky; top: 0; background: #1A1C1F; z-index: 1;
   }
   .detail-title { font-size: 17px; font-weight: 700; color: #f8fafc; }
-  .detail-meta { font-size: 11px; color: #475569; margin-top: 3px; }
+  .detail-meta { font-size: 11px; color: #5F6267; margin-top: 3px; }
   .detail-tabs {
     display: flex; gap: 2px; padding: 0 20px;
     border-bottom: 1px solid rgba(255,255,255,0.07);
-    position: sticky; top: 61px; background: #161f32; z-index: 1;
+    position: sticky; top: 61px; background: #1A1C1F; z-index: 1;
   }
   .detail-tab {
     background: none; border: none; cursor: pointer;
     padding: 12px 14px; font-size: 13px; font-weight: 600;
-    color: #64748b; font-family: 'Manrope', sans-serif;
+    color: #7A7D82; font-family: 'Manrope', sans-serif;
     border-bottom: 2px solid transparent; margin-bottom: -1px;
     transition: color 0.15s, border-color 0.15s; white-space: nowrap;
   }
-  .detail-tab:hover { color: #cbd5e1; }
-  .detail-tab.active { color: #f8fafc; border-bottom-color: #2563eb; }
+  .detail-tab:hover { color: #D2D3D5; }
+  .detail-tab.active { color: #f8fafc; border-bottom-color: #FF6B1A; }
   .detail-body { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
-  .detail-section-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #475569; margin-bottom: 10px; }
+  .detail-section-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5F6267; margin-bottom: 10px; }
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .info-label { font-size: 10px; color: #475569; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .info-label { font-size: 10px; color: #5F6267; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
   .info-value { font-size: 13px; color: #f8fafc; margin-top: 2px; font-weight: 500; word-break: break-word; }
 
   /* ── Outreach tab ── */
   .outreach-panel { display: flex; flex-direction: column; gap: 14px; }
   .outreach-field { display: flex; flex-direction: column; gap: 6px; }
-  .outreach-field > span { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475569; }
-  .outreach-check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #cbd5e1; cursor: pointer; }
-  .outreach-check input { width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; }
+  .outreach-field > span { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #5F6267; }
+  .outreach-check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #D2D3D5; cursor: pointer; }
+  .outreach-check input { width: 16px; height: 16px; accent-color: #FF6B1A; cursor: pointer; }
 
   /* ── Playbook chooser ── */
   .playbook-choice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 720px; }
   .playbook-choice-card {
     display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-    background: #161f32; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
     padding: 22px; text-align: left; cursor: pointer; transition: border-color 0.15s, transform 0.15s;
   }
-  .playbook-choice-card:hover { border-color: rgba(37,99,235,0.5); transform: translateY(-2px); }
+  .playbook-choice-card:hover { border-color: rgba(255,107,26,0.5); transform: translateY(-2px); }
   .playbook-choice-icon {
-    width: 38px; height: 38px; border-radius: 9px; background: rgba(37,99,235,0.15);
-    color: #3b82f6; display: flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 9px; background: rgba(255,107,26,0.15);
+    color: #FF8A3D; display: flex; align-items: center; justify-content: center;
   }
   .playbook-choice-title { font-size: 15px; font-weight: 700; color: #f8fafc; }
-  .playbook-choice-sub { font-size: 12px; color: #64748b; line-height: 1.5; }
+  .playbook-choice-sub { font-size: 12px; color: #7A7D82; line-height: 1.5; }
 
   /* ── Tasks ── */
   .task-list { display: flex; flex-direction: column; gap: 6px; }
   .task-item {
     display: flex; align-items: center; gap: 10px; padding: 10px 12px;
-    background: rgba(11,17,33,0.6); border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(17,18,20,0.6); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 7px; transition: background 0.1s;
   }
-  .task-item:hover { background: rgba(30,41,59,0.5); }
+  .task-item:hover { background: rgba(42,45,50,0.5); }
   .task-checkbox {
     width: 20px; height: 20px; border-radius: 5px; border: 1.5px solid rgba(255,255,255,0.2);
     background: transparent; cursor: pointer; flex-shrink: 0; transition: all 0.15s;
     display: flex; align-items: center; justify-content: center;
   }
   .task-checkbox.done { background: #10b981; border-color: #10b981; }
-  .task-name { flex: 1; font-size: 13px; color: #cbd5e1; }
-  .task-name.done { text-decoration: line-through; color: #475569; }
-  .task-delete { background: none; border: none; color: #334155; cursor: pointer; padding: 4px; border-radius: 3px; transition: color 0.1s; font-size: 14px; }
+  .task-name { flex: 1; font-size: 13px; color: #D2D3D5; }
+  .task-name.done { text-decoration: line-through; color: #5F6267; }
+  .task-delete { background: none; border: none; color: #41444A; cursor: pointer; padding: 4px; border-radius: 3px; transition: color 0.1s; font-size: 14px; }
   .task-delete:hover { color: #ef4444; }
   .add-task-row { display: flex; gap: 8px; margin-top: 4px; }
   .add-task-input {
-    flex: 1; padding: 10px 12px; background: rgba(11,17,33,0.6);
+    flex: 1; padding: 10px 12px; background: rgba(17,18,20,0.6);
     border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
     color: #f8fafc; font-size: 14px; font-family: 'Manrope', sans-serif; outline: none;
   }
-  .add-task-input:focus { border-color: rgba(37,99,235,0.4); }
+  .add-task-input:focus { border-color: rgba(255,107,26,0.4); }
   .task-progress { height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-bottom: 10px; }
   .task-progress-bar { height: 100%; background: #10b981; border-radius: 2px; transition: width 0.3s; }
-  .task-progress-label { font-size: 10px; color: #475569; margin-bottom: 6px; }
+  .task-progress-label { font-size: 10px; color: #5F6267; margin-bottom: 6px; }
 
-  .loading { display: flex; align-items: center; justify-content: center; height: 100%; color: #475569; font-size: 14px; }
+  .loading { display: flex; align-items: center; justify-content: center; height: 100%; color: #5F6267; font-size: 14px; }
   /* ── Simple Login ── */
   .login-page {
     display: flex; align-items: center; justify-content: center;
-    min-height: 100vh; background: #0B1121; padding: 20px;
+    min-height: 100vh; background: #111214; padding: 20px;
   }
   .login-card {
-    background: #161f32; border: 1px solid rgba(255,255,255,0.08);
+    background: #1A1C1F; border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px; padding: 40px; width: 100%; max-width: 380px;
     box-shadow: 0 24px 48px rgba(0,0,0,0.5);
   }
@@ -1058,17 +1062,17 @@ const css = `
     border-radius: 7px; font-size: 12px; color: #ef4444; margin-bottom: 8px;
   }
   .btn-login {
-    padding: 11px; background: #2563eb; color: white; border: none;
+    padding: 11px; background: #FF6B1A; color: #111214; border: none;
     border-radius: 8px; font-size: 14px; font-weight: 600;
     font-family: 'Manrope', sans-serif; cursor: pointer; transition: background 0.15s;
   }
-  .btn-login:hover { background: #3b82f6; }
+  .btn-login:hover { background: #FF8A3D; }
   .btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
   /* ── Logout button ── */
   .logout-btn {
     display: flex; align-items: center; gap: 7px; width: 100%;
     padding: 9px 10px; margin-top: auto; border: none; background: none;
-    color: #475569; font-size: 12px; font-weight: 500; font-family: 'Manrope', sans-serif;
+    color: #5F6267; font-size: 12px; font-weight: 500; font-family: 'Manrope', sans-serif;
     cursor: pointer; border-radius: 7px; transition: all 0.15s; text-align: left;
     text-decoration: none;
   }
@@ -1079,11 +1083,11 @@ const css = `
     display: none;
     position: fixed; bottom: 72px; right: 16px; z-index: 55;
     width: 52px; height: 52px; border-radius: 50%;
-    background: #2563eb; color: white; border: none; cursor: pointer;
+    background: #FF6B1A; color: #111214; border: none; cursor: pointer;
     font-size: 24px; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.5); transition: background 0.15s;
+    box-shadow: 0 4px 16px rgba(255,107,26,0.5); transition: background 0.15s;
   }
-  .fab:active { background: #3b82f6; }
+  .fab:active { background: #FF8A3D; }
 
   /* ── Prospecting ── */
   .prospecting-search-bar { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; }
@@ -1100,8 +1104,8 @@ const css = `
     font-weight: 700; font-size: 12px; color: white;
   }
   .no-site { color: #ef4444; font-weight: 600; font-size: 12px; }
-  .has-site { color: #64748b; font-size: 12px; }
-  .has-site a { color: #60a5fa; }
+  .has-site { color: #7A7D82; font-size: 12px; }
+  .has-site a { color: #FF9A5C; }
   .detail-row td { padding: 0; }
   .detail-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1109,18 +1113,18 @@ const css = `
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .detail-block h4 {
-    margin: 0 0 8px; font-size: 11px; color: #475569; text-transform: uppercase;
+    margin: 0 0 8px; font-size: 11px; color: #5F6267; text-transform: uppercase;
     letter-spacing: 0.06em; font-weight: 600;
   }
-  .detail-block label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; margin-bottom: 8px; color: #94a3b8; }
+  .detail-block label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; margin-bottom: 8px; color: #A0A3A8; }
   .detail-block label input[type="checkbox"] { flex-direction: row; width: auto; }
-  .auto-signals { list-style: none; margin: 0; padding: 0; font-size: 12px; color: #94a3b8; }
+  .auto-signals { list-style: none; margin: 0; padding: 0; font-size: 12px; color: #A0A3A8; }
   .auto-signals li { padding: 3px 0; }
   .auto-signals li.on { color: #ef4444; }
-  .maps-link { display: inline-block; margin-top: 6px; font-size: 12px; color: #60a5fa; }
+  .maps-link { display: inline-block; margin-top: 6px; font-size: 12px; color: #FF9A5C; }
   .crm-push-status { margin: 0 0 8px; font-size: 12px; }
-  .crm-push-status.pushed { color: #2563eb; font-weight: 600; }
-  .crm-push-status.muted { color: #475569; }
+  .crm-push-status.pushed { color: #FF6B1A; font-weight: 600; }
+  .crm-push-status.muted { color: #5F6267; }
   .push-crm-btn { font-size: 12px; padding: 7px 12px; }
 
   /* ── Responsive breakpoints ── */
@@ -1323,7 +1327,7 @@ function ClinicModal({ clinic, onSave, onClose }) {
           </div>
 
           <div style={{ borderTop:"1px solid rgba(255,255,255,0.07)", margin:"6px 0 2px", paddingTop:14 }}>
-            <div className="form-label" style={{ marginBottom:12, color:"#60a5fa" }}>Prospecting</div>
+            <div className="form-label" style={{ marginBottom:12, color:"#FF9A5C" }}>Prospecting</div>
             <div className="form-row">
               <div className="form-group">
                 <label className="form-label">Industry / Trade</label>
@@ -1456,7 +1460,7 @@ function LaunchModal({ clinic, sequences, prefillTrigger, onLaunch, onClose }) {
                     {seq.steps.map((s, i) => (
                       <div key={s.id} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 12px", background:"rgba(11,17,33,0.6)", border:"1px solid rgba(255,255,255,0.07)", borderRadius:7 }}>
                         <span style={{ color:"#475569", fontSize:11, fontFamily:"monospace", minWidth:16 }}>#{i+1}</span>
-                        <span style={{ color:"#60a5fa" }}><Ic.Mail /></span>
+                        <span style={{ color:"#FF9A5C" }}><Ic.Mail /></span>
                         <span style={{ color:"#94a3b8", fontSize:12, flex:1 }}>
                           {s.subject || "No subject"} &middot; {stepDelayLabel(s, i)}
                         </span>
@@ -1486,14 +1490,14 @@ function MsgPreviewModal({ step, clinic, onClose }) {
       <div className="modal" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
           <div style={{ display:"flex", alignItems:"center", gap:8 }}>
-            <span style={{ color:"#60a5fa" }}><Ic.Mail /></span>
+            <span style={{ color:"#FF9A5C" }}><Ic.Mail /></span>
             <span className="modal-title">Email Preview</span>
           </div>
           <button className="modal-close" onClick={onClose}><Ic.X /></button>
         </div>
         <div className="modal-body">
           {step.subject && (
-            <div style={{ padding:"8px 12px", background:"rgba(96,165,250,0.08)", borderRadius:6, fontSize:13, color:"#bfdbfe", fontWeight:600 }}>
+            <div style={{ padding:"8px 12px", background:"rgba(255,154,92,0.08)", borderRadius:6, fontSize:13, color:"#bfdbfe", fontWeight:600 }}>
               Subject: {renderBody(step.subject, clinic)}
             </div>
           )}
@@ -1530,10 +1534,10 @@ function ClinicPickerModal({ clinics, onSelect, onClose }) {
             {clinics.length === 0 && <div style={{ color:"#475569", fontSize:13, textAlign:"center", padding:"24px 0" }}>No businesses yet. Add one first.</div>}
             {clinics.map(c => (
               <button key={c.id} onClick={() => onSelect(c)}
-                style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 14px", background:"#0B1121", border:"1px solid rgba(255,255,255,0.08)", borderRadius:8, cursor:"pointer", textAlign:"left", transition:"border-color 0.15s", width:"100%" }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = "#3b82f6")}
+                style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 14px", background:"#111214", border:"1px solid rgba(255,255,255,0.08)", borderRadius:8, cursor:"pointer", textAlign:"left", transition:"border-color 0.15s", width:"100%" }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = "#FF6B1A")}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}>
-                <div style={{ width:34, height:34, borderRadius:8, background:"rgba(37,99,235,0.15)", display:"flex", alignItems:"center", justifyContent:"center", color:"#3b82f6", flexShrink:0 }}><Ic.Clinic /></div>
+                <div style={{ width:34, height:34, borderRadius:8, background:"rgba(255,107,26,0.15)", display:"flex", alignItems:"center", justifyContent:"center", color:"#FF6B1A", flexShrink:0 }}><Ic.Clinic /></div>
                 <div>
                   <div style={{ fontWeight:600, color:"#f8fafc", fontSize:13 }}>{c.name}</div>
                   <div style={{ fontSize:11, color:"#475569" }}>{c.contact_name || "&#8212;"} &middot; {stageLabel(c.status)}</div>
@@ -1590,11 +1594,11 @@ function SequenceEditorModal({ seq, onSave, onClose }) {
               <div style={{ border:"1px dashed rgba(255,255,255,0.08)", borderRadius:8, padding:20, textAlign:"center", color:"#475569", fontSize:13 }}>No steps yet</div>
             )}
             {form.steps.map((step, idx) => (
-              <div key={step.id} style={{ border:`1px solid ${editStep === step.id ? "#3b82f6" : "rgba(255,255,255,0.08)"}`, borderRadius:8, marginBottom:8, overflow:"hidden", transition:"border-color 0.2s" }}>
+              <div key={step.id} style={{ border:`1px solid ${editStep === step.id ? "#FF6B1A" : "rgba(255,255,255,0.08)"}`, borderRadius:8, marginBottom:8, overflow:"hidden", transition:"border-color 0.2s" }}>
                 <div onClick={() => setEditStep(editStep === step.id ? null : step.id)}
-                  style={{ padding:"11px 14px", display:"flex", alignItems:"center", gap:10, cursor:"pointer", background:"#0B1121" }}>
+                  style={{ padding:"11px 14px", display:"flex", alignItems:"center", gap:10, cursor:"pointer", background:"#111214" }}>
                   <span style={{ color:"#475569", fontSize:11, fontFamily:"monospace", minWidth:18 }}>#{idx+1}</span>
-                  <span style={{ color:"#60a5fa" }}><Ic.Mail /></span>
+                  <span style={{ color:"#FF9A5C" }}><Ic.Mail /></span>
                   <span style={{ color:"#94a3b8", fontSize:13, flex:1 }}>
                     {step.subject || "No subject"} &middot; {stepDelayLabel(step, idx)}
                   </span>
@@ -1712,8 +1716,8 @@ function DetailPanel({ clinic, sequences, onClose, onUpdate, onPatch, onDelete, 
                   <div><div className="info-label">Phone</div><div className="info-value" style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:12 }}>{clinic.contact_phone || "&#8212;"}</div></div>
                   <div><div className="info-label">Email</div><div className="info-value" style={{ fontSize:12 }}>{clinic.contact_email || "&#8212;"}</div></div>
                   <div><div className="info-label">Start Date</div><div className="info-value">{formatDate(clinic.start_date)}</div></div>
-                  {clinic.website && <div style={{ gridColumn:"span 2" }}><div className="info-label">Website</div><div className="info-value" style={{ fontSize:12 }}><a href={/^https?:\/\//i.test(clinic.website) ? clinic.website : `https://${clinic.website}`} target="_blank" rel="noopener noreferrer" style={{ color:"#3b82f6" }}>{clinic.website}</a></div></div>}
-                  {clinic.package && <div style={{ gridColumn:"span 2" }}><div className="info-label">Package</div><div className="info-value" style={{ color:"#3b82f6", fontWeight:700 }}>{clinic.package}</div></div>}
+                  {clinic.website && <div style={{ gridColumn:"span 2" }}><div className="info-label">Website</div><div className="info-value" style={{ fontSize:12 }}><a href={/^https?:\/\//i.test(clinic.website) ? clinic.website : `https://${clinic.website}`} target="_blank" rel="noopener noreferrer" style={{ color:"#FF6B1A" }}>{clinic.website}</a></div></div>}
+                  {clinic.package && <div style={{ gridColumn:"span 2" }}><div className="info-label">Package</div><div className="info-value" style={{ color:"#FF6B1A", fontWeight:700 }}>{clinic.package}</div></div>}
                 </div>
                 <a href={`https://www.google.com/search?q=${encodeURIComponent(clinic.name + " " + (clinic.contact_phone || ""))}`}
                   target="_blank" rel="noopener noreferrer" className="btn-ghost"
@@ -1733,7 +1737,7 @@ function DetailPanel({ clinic, sequences, onClose, onUpdate, onPatch, onDelete, 
                     {clinic.source && <div style={{ gridColumn: clinic.industry && clinic.priority ? "span 2" : "auto" }}><div className="info-label">Source</div><div className="info-value" style={{ fontSize:13 }}>{clinic.source}</div></div>}
                   </div>
                   {clinic.lead_note && (
-                    <div style={{ marginTop:10, padding:"10px 12px", background:"rgba(96,165,250,0.08)", border:"1px solid rgba(96,165,250,0.2)", borderRadius:8 }}>
+                    <div style={{ marginTop:10, padding:"10px 12px", background:"rgba(255,154,92,0.08)", border:"1px solid rgba(255,154,92,0.2)", borderRadius:8 }}>
                       <div className="info-label" style={{ marginBottom:4 }}>The Leak / Angle</div>
                       <div style={{ fontSize:13, color:"#cbd5e1", lineHeight:1.5, whiteSpace:"pre-wrap" }}>{clinic.lead_note}</div>
                     </div>
@@ -1747,7 +1751,7 @@ function DetailPanel({ clinic, sequences, onClose, onUpdate, onPatch, onDelete, 
                     const accounts = PACKAGE_ACCOUNTS[clinic.package] || [];
                     if (!accounts.length) return <span style={{ fontSize:12, color:"#64748b" }}>{clinic.package ? "None required" : "Select a package to see requirements"}</span>;
                     return accounts.map(x => (
-                      <span key={x} style={{ padding:"5px 11px", background:"rgba(59,130,246,0.1)", border:"1px solid rgba(59,130,246,0.3)", borderRadius:6, fontSize:11, fontWeight:600, color:"#60a5fa" }}>{x}</span>
+                      <span key={x} style={{ padding:"5px 11px", background:"rgba(255,107,26,0.1)", border:"1px solid rgba(255,107,26,0.3)", borderRadius:6, fontSize:11, fontWeight:600, color:"#FF9A5C" }}>{x}</span>
                     ));
                   })()}
                 </div>
@@ -1824,15 +1828,15 @@ function DetailPanel({ clinic, sequences, onClose, onUpdate, onPatch, onDelete, 
             <>
               {/* Package badge + progress */}
               {clinic.package ? (
-                <div style={{ padding:"12px 16px", background:"rgba(37,99,235,0.1)", border:"1px solid rgba(59,130,246,0.25)", borderRadius:8, marginBottom:18, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+                <div style={{ padding:"12px 16px", background:"rgba(255,107,26,0.1)", border:"1px solid rgba(255,107,26,0.25)", borderRadius:8, marginBottom:18, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
                   <div>
-                    <span style={{ fontSize:10, color:"#60a5fa", fontWeight:700, textTransform:"uppercase", letterSpacing:"0.08em" }}>Package</span>
+                    <span style={{ fontSize:10, color:"#FF9A5C", fontWeight:700, textTransform:"uppercase", letterSpacing:"0.08em" }}>Package</span>
                     <div style={{ color:"#f8fafc", fontWeight:700, fontSize:14, marginTop:2 }}>{clinic.package}</div>
                   </div>
                   <div style={{ textAlign:"right" }}>
                     <div style={{ color:"#64748b", fontSize:11 }}>{doneT} of {allT.length} done</div>
                     <div style={{ width:80, height:4, background:"rgba(255,255,255,0.07)", borderRadius:2, marginTop:5 }}>
-                      <div style={{ height:"100%", background:"#3b82f6", borderRadius:2, width: pct + "%" }} />
+                      <div style={{ height:"100%", background:"#FF6B1A", borderRadius:2, width: pct + "%" }} />
                     </div>
                   </div>
                 </div>
@@ -1844,7 +1848,7 @@ function DetailPanel({ clinic, sequences, onClose, onUpdate, onPatch, onDelete, 
 
               {/* Task sections: Your Tasks + Client Tasks */}
               {[
-                { type:"alignment", tasks:aTasks, key:"alignmentTasks", label:"Your Tasks", sublabel:"Alignment Automations (Matthew)", accent:"#3b82f6" },
+                { type:"alignment", tasks:aTasks, key:"alignmentTasks", label:"Your Tasks", sublabel:"Primed & Booked (Matthew)", accent:"#FF6B1A" },
                 { type:"business",  tasks:cTasks, key:"clinicTasks",    label:"Client Tasks", sublabel:"What the business owner needs to complete", accent:"#10b981" },
               ].map(({ type, tasks, key, label, sublabel, accent }) => {
                 const secs = [...new Set(tasks.map(t => t.section).filter(Boolean))];
@@ -2116,7 +2120,7 @@ function DashboardView({ clinics, sequences, onAdd, onEdit, onDelete, onSelect, 
                       <StatusDropdown status={c.status} onChange={s => onStatusChange(c.id, s)} />
                       {c.outreach_stage && c.outreach_stage !== "New" && (
                         <div style={{ marginTop:4 }}>
-                          <span style={{ fontSize:10, color:"#60a5fa" }}>&#9679; {c.outreach_stage}</span>
+                          <span style={{ fontSize:10, color:"#FF9A5C" }}>&#9679; {c.outreach_stage}</span>
                         </div>
                       )}
                     </td>
@@ -2124,7 +2128,7 @@ function DashboardView({ clinics, sequences, onAdd, onEdit, onDelete, onSelect, 
                       {activeFuCount > 0 ? (
                         <span className="fu-badge fu-active" style={{ cursor:"pointer" }} onClick={() => onSelect(c)}>{activeFuCount} active</span>
                       ) : hasSuggest ? (
-                        <button className="btn-ghost" style={{ fontSize:11, padding:"4px 8px", borderColor:"rgba(37,99,235,0.3)", color:"#60a5fa" }} onClick={() => onOpenLaunch(c)}>
+                        <button className="btn-ghost" style={{ fontSize:11, padding:"4px 8px", borderColor:"rgba(255,107,26,0.3)", color:"#FF9A5C" }} onClick={() => onOpenLaunch(c)}>
                           <Ic.Zap /> Suggested
                         </button>
                       ) : (
@@ -2166,7 +2170,7 @@ function DashboardView({ clinics, sequences, onAdd, onEdit, onDelete, onSelect, 
                 <div className="clinic-list-card-right">
                   <div onClick={e => e.stopPropagation()}><StatusDropdown status={c.status} onChange={s => onStatusChange(c.id, s)} /></div>
                   {c.outreach_stage && c.outreach_stage !== "New" && (
-                    <span style={{ fontSize:10, color:"#60a5fa" }}>&#9679; {c.outreach_stage}</span>
+                    <span style={{ fontSize:10, color:"#FF9A5C" }}>&#9679; {c.outreach_stage}</span>
                   )}
                   {activeFuCount > 0 && <span className="fu-badge fu-active">{activeFuCount} active</span>}
                 </div>
@@ -2243,8 +2247,8 @@ function PipelineView({ clinics, sequences, onSelect, onStatusChange, onOpenLaun
                                   <div className="card-date">{formatDate(c.start_date)}</div>
                                   {c.outreach_stage && c.outreach_stage !== "New" && (
                                     <div style={{ display:"flex", alignItems:"center", gap:4, marginTop:5 }}>
-                                      <span style={{ width:6, height:6, borderRadius:"50%", background:"#60a5fa", display:"inline-block" }} />
-                                      <span style={{ fontSize:10, color:"#60a5fa" }}>{c.outreach_stage}</span>
+                                      <span style={{ width:6, height:6, borderRadius:"50%", background:"#FF9A5C", display:"inline-block" }} />
+                                      <span style={{ fontSize:10, color:"#FF9A5C" }}>{c.outreach_stage}</span>
                                     </div>
                                   )}
                                   {activeFu.length > 0 && (
@@ -2256,8 +2260,8 @@ function PipelineView({ clinics, sequences, onSelect, onStatusChange, onOpenLaun
                                   {hasSuggest && (
                                     <div style={{ display:"flex", alignItems:"center", gap:4, marginTop:5 }}
                                       onClick={e => { e.stopPropagation(); onOpenLaunch(c); }}>
-                                      <span style={{ width:6, height:6, borderRadius:"50%", background:"#3b82f6", display:"inline-block" }} />
-                                      <span style={{ fontSize:10, color:"#60a5fa", cursor:"pointer" }}>Follow-up suggested &#8599;</span>
+                                      <span style={{ width:6, height:6, borderRadius:"50%", background:"#FF6B1A", display:"inline-block" }} />
+                                      <span style={{ fontSize:10, color:"#FF9A5C", cursor:"pointer" }}>Follow-up suggested &#8599;</span>
                                     </div>
                                   )}
                                 </div>
@@ -2331,7 +2335,7 @@ function FollowupView({ clinics, sequences, setSequences, onOpenLaunch, onSelect
     <button key={id} onClick={() => setFuTab(id)}
       style={{ background:"none", border:"none", cursor:"pointer", padding:"10px 16px", fontSize:13, fontWeight:600,
         color: fuTab===id ? "#f8fafc" : "#475569",
-        borderBottom: fuTab===id ? "2px solid #2563eb" : "2px solid transparent",
+        borderBottom: fuTab===id ? "2px solid #FF6B1A" : "2px solid transparent",
         marginBottom:-1, transition:"all 0.15s", fontFamily:"Manrope,sans-serif" }}>
       {label}
     </button>
@@ -2367,7 +2371,7 @@ function FollowupView({ clinics, sequences, setSequences, onOpenLaunch, onSelect
                 { label:"Active",    value: activeFu.length,                         color:"#4ade80" },
                 { label:"Paused",    value: pausedFu.length,                         color:"#f59e0b" },
                 { label:"Completed", value: completedFu.length,                      color:"#94a3b8" },
-                { label:"Sequences", value: sequences.filter(s => s.active).length,  color:"#60a5fa" },
+                { label:"Sequences", value: sequences.filter(s => s.active).length,  color:"#FF9A5C" },
               ].map((st, i) => (
                 <div key={i} className="stat-card">
                   <div className="stat-label" style={{ color: st.color }}>{st.label}</div>
@@ -2500,7 +2504,7 @@ function FollowupView({ clinics, sequences, setSequences, onOpenLaunch, onSelect
                           {seq.steps.map((s,i) => (
                             <div key={s.id} style={{ display:"flex", alignItems:"center", gap:3 }}>
                               {i > 0 && <div className="seq-connector" />}
-                              <div className="seq-step-pill" style={{ background:"rgba(96,165,250,0.15)", color:"#60a5fa" }}>
+                              <div className="seq-step-pill" style={{ background:"rgba(255,154,92,0.15)", color:"#FF9A5C" }}>
                                 <Ic.Mail />
                               </div>
                               <span style={{ fontSize:10, color:"#475569", marginRight:2 }}>
@@ -2532,7 +2536,7 @@ function FollowupView({ clinics, sequences, setSequences, onOpenLaunch, onSelect
                           <div key={s.id} className="seq-step-preview">
                             <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom: s.body ? 6 : 0 }}>
                               <span style={{ color:"#475569", fontSize:11, fontFamily:"monospace", minWidth:46 }}>Step {i+1}</span>
-                              <span style={{ color:"#60a5fa" }}><Ic.Mail /></span>
+                              <span style={{ color:"#FF9A5C" }}><Ic.Mail /></span>
                               <span style={{ color:"#94a3b8", fontSize:12 }}>
                                 {i===0 && !s.delay ? "Immediately" : `After ${s.delay} ${s.delayUnit}`}
                                 {s.channel==="email" && s.subject ? ` \u2014 "${s.subject}"` : ""}
@@ -2587,7 +2591,7 @@ function SimpleLogin({ onLogin }) {
       <style>{css}</style>
       <div className="login-page">
         <div className="login-card">
-          <div className="brand-name" style={{ fontSize:18, marginBottom:24 }}>Alignment Automations</div>
+          <div className="brand-name" style={{ fontSize:18, marginBottom:24 }}>PRIMED &amp; <span style={{ color:"#FF6B1A" }}>BOOKED</span></div>
           <div className="login-title">Enter Password</div>
           <form style={{ display:"flex", flexDirection:"column", gap:14 }} onSubmit={submit}>
             {err && <div className="login-error">{err}</div>}
@@ -3509,21 +3513,21 @@ export default function App() {
         {/* ── Sidebar ── */}
         <aside className="sidebar">
           <div className="sidebar-brand">
-            <svg width="34" height="34" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink:0 }}>
-              <defs>
-                <linearGradient id="sbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#003D7A"/>
-                  <stop offset="100%" stopColor="#0066CC"/>
-                </linearGradient>
-              </defs>
-              <polygon points="60,6 106,33 106,87 60,114 14,87 14,33" fill="url(#sbGrad)"/>
-              <rect x="56" y="26" width="8" height="68" rx="4" fill="#ffffff"/>
-              <circle cx="60" cy="60" r="18" fill="#ffffff"/>
-              <path d="M 52 60 L 57 67 L 70 50" stroke="#0066CC" strokeWidth="4.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink:0 }}>
+              <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="none" stroke="#FF6B1A" strokeWidth="6" strokeLinejoin="round"/>
+              <g transform="translate(-2.5 4)">
+                <path d="M28 54 L41 66 L60 45" stroke="#FF6B1A" strokeWidth="9" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                <g transform="translate(60 45) rotate(-47)">
+                  <path d="M14.5 -3 C17 -2.6 19 -2.4 21 -2.8 C24 -3.4 27 -3.6 28 -2.4 Q29.5 0 28 2.4 C27 3.6 24 3.4 21 2.8 C19 2.4 17 2.6 14.5 3 Z" fill="#F2EFE9"/>
+                  <rect x="8" y="-5.8" width="6.5" height="11.6" rx="0.8" fill="#C9CCD1"/>
+                  <path d="M0 -5 L8 -5.5 L8 5.5 L0 5 Q-1 0 0 -5 Z" fill="#E8C48A"/>
+                  <path d="M0 -5 L4 -5.2 Q3.2 -2 4.3 0 Q5.2 2.4 4 5.2 L0 5 Q-1 0 0 -5 Z" fill="#FF6B1A"/>
+                </g>
+              </g>
             </svg>
             <div className="brand-text">
-              <div className="brand-name">Alignment</div>
-              <div className="brand-name">Automations</div>
+              <div className="brand-name">PRIMED &amp;</div>
+              <div className="brand-name" style={{ color:"#FF6B1A" }}>BOOKED</div>
             </div>
           </div>
           <nav className="sidebar-nav">

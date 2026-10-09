@@ -62,7 +62,7 @@ function escapeHtml(s) {
 }
 function textToHtml(text) {
   let out = escapeHtml(text || '');
-  out = out.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" style="color:#0066CC;text-decoration:underline;">$1</a>');
+  out = out.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" style="color:#B8460F;text-decoration:underline;">$1</a>');
   return out.replace(/\n/g, '<br>');
 }
 function wrapEmailHtml(bodyText) {
@@ -72,23 +72,23 @@ function wrapEmailHtml(bodyText) {
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
   </head>
-  <body style="margin:0;padding:0;background:#F4F7FB;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F7FB;padding:32px 16px;">
+  <body style="margin:0;padding:0;background:#F6F4EF;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6F4EF;padding:32px 16px;">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#FFFFFF;border:1px solid #E2E9F1;border-radius:14px;overflow:hidden;">
-          <tr><td style="padding:22px 28px;border-bottom:1px solid #E2E9F1;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#FFFFFF;border:1px solid #E6E2DA;border-radius:14px;overflow:hidden;">
+          <tr><td style="padding:22px 28px;border-bottom:1px solid #E6E2DA;">
             <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-              <td style="width:56px;height:56px;background-image:url('https://app.alignmentautomations.com/logo-email.png?v=6');background-size:52px 52px;background-repeat:no-repeat;background-position:center;text-align:center;"></td>
+              <td style="width:56px;height:56px;background-image:url('https://app.primedandbooked.com/logo-email.png?v=7');background-size:52px 52px;background-repeat:no-repeat;background-position:center;text-align:center;"></td>
               <td style="padding-left:12px;font-family:Arial,sans-serif;font-size:16px;">
-                <span style="font-weight:700;color:#1A1A1A;">Alignment</span><span style="font-weight:400;color:#0066CC;"> Automations</span>
+                <span style="font-weight:900;color:#1A1A1A;letter-spacing:0.02em;">PRIMED &amp;</span><span style="font-weight:900;color:#FF6B1A;letter-spacing:0.02em;"> BOOKED</span>
               </td>
             </tr></table>
           </td></tr>
           <tr><td style="padding:28px;font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#242A2E;">
             ${textToHtml(bodyText)}
           </td></tr>
-          <tr><td style="padding:16px 28px;border-top:1px solid #E2E9F1;font-family:Arial,sans-serif;font-size:12px;color:#8A929C;">
-            Alignment Automations &middot; hello@alignmentautomations.com
+          <tr><td style="padding:16px 28px;border-top:1px solid #E6E2DA;font-family:Arial,sans-serif;font-size:12px;color:#8A929C;">
+            Primed &amp; Booked &middot; hello@primedandbooked.com
           </td></tr>
         </table>
       </td></tr>
