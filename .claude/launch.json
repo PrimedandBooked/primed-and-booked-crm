@@ -20,7 +20,7 @@
       "port": 3000
     },
     {
-      "name": "AlignmentAutomations Site",
+      "name": "Primed & Booked Site",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "C:/Users/Admin/alignment-automations-site", "-l", "3001"],
       "port": 3001

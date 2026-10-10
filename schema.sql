@@ -1,4 +1,4 @@
--- Authoritative schema for the Alignment Automations CRM (Cloudflare D1).
+-- Authoritative schema for the Primed & Booked CRM (Cloudflare D1).
 -- Recreate the database with:
 --   wrangler d1 execute alignment-automations-db --remote --file schema.sql
 

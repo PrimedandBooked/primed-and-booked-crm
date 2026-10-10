@@ -9,8 +9,6 @@
 const ALLOWED_ORIGINS = [
   'https://primedandbooked.com',
   'https://www.primedandbooked.com',
-  'https://alignmentautomations.com',      // old domain, kept until it only redirects
-  'https://www.alignmentautomations.com',
   'http://localhost:5173',   // vite dev
   'http://localhost:8788',   // wrangler pages dev
 ];
