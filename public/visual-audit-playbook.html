@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
-<title>Visual Audit Playbook · Alignment Automations</title>
+<title>Visual Audit Playbook · Primed &amp; Booked</title>
 <script>
 (function(){try{var t=localStorage.getItem('va_theme');
 if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
@@ -15,10 +15,10 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 
 
 :root{
-  --navy:#003D7A; --navy2:#004A94; --deep:#002A55; --ink:#242A2E;
-  --blue:#0066CC; --blue2:#4DA3FF; --bluesoft:#E7F0FB; --blueline:#C2DAF2;
-  --amber:#003D7A; --ambersoft:#EAF2FB; --amberline:#CFE1F4;
-  --paper:#F4F7FB; --card:#FFFFFF; --border:#E2E9F1; --muted:#5C6670; --muted2:#8A929C;
+  --navy:#111214; --navy2:#1D2024; --deep:#111214; --ink:#1A1A1A;
+  --blue:#B8460F; --blue2:#FF9A5C; --bluesoft:#FFF1E8; --blueline:#F5CBAE;
+  --amber:#111214; --ambersoft:#F3EFE8; --amberline:#E0D9CC;
+  --paper:#F6F4EF; --card:#FFFFFF; --border:#E6E2DA; --muted:#4A4D52; --muted2:#85878C;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
@@ -39,40 +39,40 @@ li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;b
   display:flex;align-items:center;justify-content:space-between;padding:12px 18px;
   border-bottom:1px solid var(--border);}
 .topbar .bx{display:flex;align-items:center;gap:9px;}
-.topbar .nm{font-family:'Inter';font-weight:600;color:#122F52;font-size:15px;letter-spacing:.01em;}
-.topbar .nm .lt{font-weight:300;color:#0066CC;}
-.topbar a.toc{font-family:'Inter';font-weight:600;font-size:13px;color:#0066CC;
+.topbar .nm{font-family:'Inter';font-weight:600;color:#111214;font-size:15px;letter-spacing:.01em;}
+.topbar .nm .lt{font-weight:300;color:#B8460F;}
+.topbar a.toc{font-family:'Inter';font-weight:600;font-size:13px;color:#B8460F;
   border:1px solid var(--blueline);padding:6px 13px;border-radius:20px;}
 /* logo swaps by theme */
 .mark-blue,.mark-white{display:inline-flex;align-items:center;}
 .mark-white{display:none;}
 [data-theme="dark"] .mark-blue{display:none;}
 [data-theme="dark"] .mark-white{display:inline-flex;}
-[data-theme="dark"] .topbar{background:rgba(0,42,85,.97);border-bottom-color:rgba(120,160,215,.22);}
-[data-theme="dark"] .topbar .nm{color:#EAF1FF;}
-[data-theme="dark"] .topbar .nm .lt{color:#8FBEEF;}
-[data-theme="dark"] .topbar a.toc{color:#9CC0FF;border-color:rgba(120,160,215,.42);}
+[data-theme="dark"] .topbar{background:rgba(17,18,20,.97);border-bottom-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .topbar .nm{color:#F2EFE9;}
+[data-theme="dark"] .topbar .nm .lt{color:#FF6B1A;}
+[data-theme="dark"] .topbar a.toc{color:#FF9A5C;border-color:rgba(255,154,92,.42);}
 
 /* hero — light, site-styled */
-.hero{background:linear-gradient(180deg,#E7F1FC 0%,#F2F7FD 55%,#FFFFFF 100%);
-  color:#122F52;padding:40px 22px 34px;border-bottom:1px solid var(--border);}
+.hero{background:linear-gradient(180deg,#FFF1E8 0%,#FAF7F2 55%,#FFFFFF 100%);
+  color:#111214;padding:40px 22px 34px;border-bottom:1px solid var(--border);}
 .hero .eyebrow{font-family:'Inter';font-weight:600;font-size:12px;letter-spacing:.2em;
-  text-transform:uppercase;color:#0066CC;margin-bottom:14px;}
-.hero h1{color:#0B2A4A;font-size:34px;font-weight:700;line-height:1.05;letter-spacing:-0.015em;}
-.hero h1 .b{color:#0066CC;}
-.hero .bar{width:54px;height:3px;background:#0066CC;border-radius:3px;margin:20px 0 16px;}
-.hero p{color:#4C5B6E;font-size:16px;margin:0;}
+  text-transform:uppercase;color:#B8460F;margin-bottom:14px;}
+.hero h1{color:#111214;font-size:34px;font-weight:700;line-height:1.05;letter-spacing:-0.015em;}
+.hero h1 .b{color:#B8460F;}
+.hero .bar{width:54px;height:3px;background:#B8460F;border-radius:3px;margin:20px 0 16px;}
+.hero p{color:#4A4D52;font-size:16px;margin:0;}
 .hero .meta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;}
 .hero .pill{font-family:'Inter';font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:#0066CC;border:1px solid var(--blueline);border-radius:20px;padding:5px 12px;background:rgba(255,255,255,.6);}
-[data-theme="dark"] .hero{background:radial-gradient(130% 100% at 80% 0%,#0A5BAF 0%,#003D7A 46%,#00234A 100%);
+  color:#B8460F;border:1px solid var(--blueline);border-radius:20px;padding:5px 12px;background:rgba(255,255,255,.6);}
+[data-theme="dark"] .hero{background:radial-gradient(130% 100% at 80% 0%,#3A2210 0%,#111214 46%,#111214 100%);
   color:#fff;border-bottom:none;}
-[data-theme="dark"] .hero .eyebrow{color:#4DA3FF;}
+[data-theme="dark"] .hero .eyebrow{color:#FF9A5C;}
 [data-theme="dark"] .hero h1{color:#fff;}
-[data-theme="dark"] .hero h1 .b{color:#4DA3FF;}
-[data-theme="dark"] .hero .bar{background:#4DA3FF;}
-[data-theme="dark"] .hero p{color:#B9C7DC;}
-[data-theme="dark"] .hero .pill{color:#9CC0FF;border-color:rgba(120,160,215,.4);background:transparent;}
+[data-theme="dark"] .hero h1 .b{color:#FF9A5C;}
+[data-theme="dark"] .hero .bar{background:#FF9A5C;}
+[data-theme="dark"] .hero p{color:#B5B2AC;}
+[data-theme="dark"] .hero .pill{color:#FF9A5C;border-color:rgba(255,154,92,.4);background:transparent;}
 
 /* body padding */
 .pad{padding:0 22px;}
@@ -87,7 +87,7 @@ li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;b
 
 /* section */
 section{padding:34px 22px 10px;scroll-margin-top:64px;}
-section + section{border-top:10px solid #EAF0F8;}
+section + section{border-top:10px solid #EFEBE3;}
 .kick{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:600;font-size:12px;
   letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:11px;}
 .kick .num{font-family:'Inter';font-weight:700;color:var(--navy);}
@@ -107,7 +107,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
   color:var(--blue);margin-bottom:8px;}
 .tint{background:var(--bluesoft);border:1px solid var(--blueline);border-radius:15px;padding:17px 18px;margin:0 0 14px;}
 .tint p{margin:0;font-size:15.5px;}
-.soft{background:#F0F4FA;border:1px solid var(--border);border-radius:15px;padding:17px 18px;margin:0 0 14px;}
+.soft{background:#F1EDE5;border:1px solid var(--border);border-radius:15px;padding:17px 18px;margin:0 0 14px;}
 .tip{background:var(--ambersoft);border:1px solid var(--amberline);border-radius:15px;padding:16px 18px;margin:0 0 14px;}
 .tip .lbl{font-family:'Inter';font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--amber);margin-bottom:5px;}
@@ -150,7 +150,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 .badge.navy{background:var(--navy);color:#fff;border-color:var(--navy);}
 
 /* checklist */
-.chk{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px dashed #D6DFEA;}
+.chk{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px dashed #E0D9CC;}
 .chk .box{flex:none;width:20px;height:20px;border:2px solid var(--blue);border-radius:5px;margin-top:1px;}
 .chk .tx{font-size:15.5px;} .chk .tx b{color:var(--navy);}
 .grouplbl{font-family:'Inter';font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
@@ -172,16 +172,16 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 .beat h4{font-size:16px;margin:6px 0 2px;}
 .beat p{margin:0;font-size:14.5px;color:var(--muted);}
 
-.foot{background:var(--deep);color:#8DA1C0;text-align:center;padding:30px 22px 34px;margin-top:20px;}
-.foot .big{color:#EAF1FF;font-family:'Inter';font-weight:500;font-size:17px;line-height:1.45;max-width:520px;margin:0 auto 16px;}
-.foot .sm{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6E84A4;font-family:'Inter';}
-.totop{display:inline-block;margin-top:14px;font-family:'Inter';font-weight:600;font-size:13px;color:#9CC0FF;
-  border:1px solid rgba(120,150,200,.4);padding:8px 16px;border-radius:20px;}
+.foot{background:var(--deep);color:#A7A9AD;text-align:center;padding:30px 22px 34px;margin-top:20px;}
+.foot .big{color:#F2EFE9;font-family:'Inter';font-weight:500;font-size:17px;line-height:1.45;max-width:520px;margin:0 auto 16px;}
+.foot .sm{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#85878C;font-family:'Inter';}
+.totop{display:inline-block;margin-top:14px;font-family:'Inter';font-weight:600;font-size:13px;color:#FF9A5C;
+  border:1px solid rgba(140,135,125,.4);padding:8px 16px;border-radius:20px;}
 .two{display:grid;grid-template-columns:1fr;gap:0;}
 
 /* theme toggle button */
 .tbtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:33px;
-  border:1px solid rgba(120,150,200,.4);border-radius:20px;background:transparent;cursor:pointer;
+  border:1px solid rgba(140,135,125,.4);border-radius:20px;background:transparent;cursor:pointer;
   font-size:15px;line-height:1;padding:0;margin-right:9px;}
 .topbar .right{display:flex;align-items:center;}
 
@@ -191,7 +191,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 .chk.on .box{background:var(--blue);border-color:var(--blue);}
 .chk.on .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;
   border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg);}
-.chk.on .tx{color:var(--muted2);text-decoration:line-through;text-decoration-color:rgba(130,146,166,.55);}
+.chk.on .tx{color:var(--muted2);text-decoration:line-through;text-decoration-color:rgba(110,113,119,.55);}
 .chk.on .tx b{color:var(--muted2);}
 .chkbar{display:flex;justify-content:flex-end;margin-bottom:6px;}
 .chkbar button{font-family:'Inter';font-weight:600;font-size:13px;color:var(--blue);background:transparent;
@@ -199,25 +199,25 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 
 /* ============ DARK MODE ============ */
 [data-theme="dark"]{
-  --paper:#071726; --card:#0E2338; --ink:#DCE6F2; --muted:#9DB0C6; --muted2:#7C8DA4;
-  --border:#22405A; --navy:#0B4A87; --blue:#4DA3FF; --bluesoft:rgba(0,102,204,.18); --blueline:rgba(77,163,255,.34);
-  --amber:#4DA3FF; --ambersoft:rgba(0,102,204,.16); --amberline:rgba(77,163,255,.34);
+  --paper:#111214; --card:#1A1C1F; --ink:#E8E5DF; --muted:#A7A9AD; --muted2:#7D8086;
+  --border:#2A2D31; --navy:#33363B; --blue:#FF9A5C; --bluesoft:rgba(255,107,26,.12); --blueline:rgba(255,154,92,.34);
+  --amber:#FF9A5C; --ambersoft:rgba(255,255,255,.05); --amberline:rgba(255,154,92,.34);
 }
 [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4,
 [data-theme="dark"] .toc .t,[data-theme="dark"] .kick .num,[data-theme="dark"] .card h4,
 [data-theme="dark"] h4.mini,[data-theme="dark"] .big,[data-theme="dark"] .script .when b,
 [data-theme="dark"] .step .t,[data-theme="dark"] .drow .nm,[data-theme="dark"] .chk .tx b,
-[data-theme="dark"] .phase h4{color:#F0F5FC;}
-[data-theme="dark"] .soft{background:#0F2942;}
-[data-theme="dark"] section + section{border-top-color:#0E2135;}
-[data-theme="dark"] .chk{border-bottom-color:#284563;}
-[data-theme="dark"] .drow .wt.neg{color:#FF6B5A;}
-[data-theme="dark"] .tbtn,[data-theme="dark"] .topbar a.toc{border-color:rgba(120,160,215,.36);}
+[data-theme="dark"] .phase h4{color:#F2EFE9;}
+[data-theme="dark"] .soft{background:#1D2024;}
+[data-theme="dark"] section + section{border-top-color:#0B0C0D;}
+[data-theme="dark"] .chk{border-bottom-color:#2A2D31;}
+[data-theme="dark"] .drow .wt.neg{color:#FF7A7A;}
+[data-theme="dark"] .tbtn,[data-theme="dark"] .topbar a.toc{border-color:rgba(255,255,255,.16);}
 
-.shotcard{background:#F4F7FB;border:1px solid var(--border);border-radius:14px;padding:14px;margin:0 0 13px;}
+.shotcard{background:#F6F4EF;border:1px solid var(--border);border-radius:14px;padding:14px;margin:0 0 13px;}
 .shotcard .browser{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-.shotcard .bar{background:#EDF1F6;padding:7px 10px;display:flex;gap:5px;align-items:center;border-bottom:1px solid var(--border);}
-.shotcard .bar span{width:8px;height:8px;border-radius:50%;background:#D3DCE6;display:inline-block;}
+.shotcard .bar{background:#EFEBE3;padding:7px 10px;display:flex;gap:5px;align-items:center;border-bottom:1px solid var(--border);}
+.shotcard .bar span{width:8px;height:8px;border-radius:50%;background:#D9D4CA;display:inline-block;}
 .shotcard .body{padding:16px 14px;position:relative;font-size:13px;color:var(--muted);}
 .shotcard .anno{position:relative;display:inline-block;}
 .shotcard .circle{position:absolute;border:2.5px solid #E0454A;border-radius:50%;}
@@ -231,22 +231,19 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 .callscript .cs-row:last-child{margin-bottom:0;}
 .callscript .cs-t{font-family:'Inter';font-weight:600;font-size:15px;color:var(--navy);margin-bottom:2px;}
 .callscript .cs-row p{margin:0;font-size:14.5px;color:var(--ink);}
-[data-theme="dark"] .shotcard{background:#0F2338;border-color:#22405A;}
-[data-theme="dark"] .shotcard .browser{background:#0B1C2E;border-color:#22405A;}
-[data-theme="dark"] .shotcard .bar{background:#0E2338;border-color:#22405A;}
+[data-theme="dark"] .shotcard{background:#1D2024;border-color:#2A2D31;}
+[data-theme="dark"] .shotcard .browser{background:#17191C;border-color:#2A2D31;}
+[data-theme="dark"] .shotcard .bar{background:#1A1C1F;border-color:#2A2D31;}
+
+/* Primed & Booked wordmark + contrast on orange fills in dark mode */
+.mark{display:inline-flex;align-items:center;}
+.topbar .nm{font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+.topbar .nm .lt{font-weight:800;color:#FF6B1A;}
+[data-theme="dark"] .topbar .nm .lt{color:#FF6B1A;}
+[data-theme="dark"] .step .n.blue{color:#111214;}
+[data-theme="dark"] .chk.on .box::after{border-color:#111214;}
 </style></head><body>
-<div class="topbar"><div class="bx"><span class="mark-blue"><svg width="30" height="30" viewBox="-140 -140 280 280" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="hexg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#003D7A"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs>
-<polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60" fill="url(#hexg2)"/>
-<rect x="-5" y="-70" width="10" height="140" rx="5" fill="#ffffff"/>
-<circle cx="0" cy="0" r="28" fill="#ffffff"/>
-<path d="M -10 0 L -2 8 L 14 -10" stroke="#0066CC" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span><span class="mark-white"><svg width="30" height="30" viewBox="-140 -140 280 280" xmlns="http://www.w3.org/2000/svg">
-<polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60" fill="#ffffff"/>
-<rect x="-5" y="-70" width="10" height="140" rx="5" fill="#003D7A"/>
-<circle cx="0" cy="0" r="28" fill="#003D7A"/>
-<path d="M -10 0 L -2 8 L 14 -10" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span><span class="nm">Alignment <span class="lt">Automations</span></span></div>
+<div class="topbar"><div class="bx"><span class="mark"><svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="#FF6B1A"/><path d="M28 52 L43 66 L72 36" stroke="#111214" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="nm">Primed &amp; <span class="lt">Booked</span></span></div>
   <div class="right"><button class="tbtn" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button><a class="toc" href="#contents">Contents ↓</a></div></div>
 <div class="hero">
   <div class="eyebrow">The Field Manual · Companion Guide</div>
@@ -313,7 +310,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
       <span class="chip">Outdated website</span>
       <div class="when"><b>Screenshot:</b> Their homepage, circle the overall design/date stamp if visible</div>
       <div class="when"><b>When to use:</b> Site exists but looks dated and isn't converting.</div>
-      <div class="say">Hi — this is Alignment Automations. I was looking at [Business]'s website (screenshot attached) and wanted to flag one thing: the design hasn't been updated in a while, which can make visitors second-guess a business that's actually doing great work. I handle the website, hosting, and follow-up so it's never something you have to think about. Here's a quick look at how the whole thing works: [How It Works link].</div></div><div class="script">
+      <div class="say">Hi — this is Primed &amp; Booked. I was looking at [Business]'s website (screenshot attached) and wanted to flag one thing: the design hasn't been updated in a while, which can make visitors second-guess a business that's actually doing great work. I handle the website, hosting, and follow-up so it's never something you have to think about. Here's a quick look at how the whole thing works: [How It Works link].</div></div><div class="script">
       <span class="chip">Not mobile-friendly</span>
       <div class="when"><b>Screenshot:</b> Phone screenshot of their site, circle the broken/overlapping button</div>
       <div class="when"><b>When to use:</b> Site is broken or clunky on a phone — where most of their traffic is.</div>
@@ -333,7 +330,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
       <span class="chip">Call-only, no online booking</span>
       <div class="when"><b>Screenshot:</b> The contact section, circle 'call only' / no scheduling option</div>
       <div class="when"><b>When to use:</b> Customers can only reach them by calling and hoping for a callback.</div>
-      <div class="say">Hey — this is Alignment Automations. Right now, booking with [Business] means calling and waiting for a callback (see attached) — and a lot of people won't. I add simple online scheduling tied to your calendar, so they pick a slot in seconds. Here's how it works: [link].</div></div><div class="script">
+      <div class="say">Hey — this is Primed &amp; Booked. Right now, booking with [Business] means calling and waiting for a callback (see attached) — and a lot of people won't. I add simple online scheduling tied to your calendar, so they pick a slot in seconds. Here's how it works: [link].</div></div><div class="script">
       <span class="chip">Clunky contact form</span>
       <div class="when"><b>Screenshot:</b> Their form, circle the field count</div>
       <div class="when"><b>When to use:</b> Form asks for too much or is buried in the site.</div>
@@ -367,14 +364,14 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 <div class="card"><div class="eyebrow">Email</div>
 <p style="margin-bottom:4px;"><b>Subject:</b> Quick thing I noticed on your site</p>
 <p style="margin-bottom:10px;font-size:14px;color:var(--muted);"><b>Alt:</b> One idea for [Business] (2 min)</p>
-<p style="font-size:15px;">Hi [Name],<br><br>I took a quick look at [Business]'s website and marked up one thing that could be costing you quote requests — attached.<br><br>[attached: marked-up screenshot]<br><br>I handle the website, hosting, and follow-up so it's never something you have to think about. Here's a quick look at how the whole system works: [How It Works link]<br><br>— Alignment Automations</p></div>
+<p style="font-size:15px;">Hi [Name],<br><br>I took a quick look at [Business]'s website and marked up one thing that could be costing you quote requests — attached.<br><br>[attached: marked-up screenshot]<br><br>I handle the website, hosting, and follow-up so it's never something you have to think about. Here's a quick look at how the whole system works: [How It Works link]<br><br>— Matt, Primed &amp; Booked</p></div>
 <div class="card"><div class="eyebrow">Facebook Messenger</div>
 <p style="font-size:15px;">Hey [Name]! 👋 Took a look at [Business] and marked up one thing on your site that might be quietly costing you leads (attached). No pitch — thought it'd be useful. Here's how I'd fix it: [link]</p></div>
 <div class="card"><div class="eyebrow">Instagram DM</div>
 <p style="font-size:14px;color:var(--muted);margin-bottom:8px;">Warm up first — like or comment on a recent job photo, then DM the next day.</p>
 <p style="font-size:15px;">Hey! Love the work on your feed 🔥 Marked up one thing on your website that could be costing you quote requests (attached) — no pitch, just thought it'd help. Here's how it works if you're curious: [link]</p></div>
 <div class="card"><div class="eyebrow">SMS <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);">— only with a legit business number</span></div>
-<p style="font-size:15px;">Hi [Name] — Alignment Automations here. Marked up one quick thing on [Business]'s site that's likely costing you leads. Sending the image now — worth a look?</p></div>
+<p style="font-size:15px;">Hi [Name] — Primed &amp; Booked here. Marked up one quick thing on [Business]'s site that's likely costing you leads. Sending the image now — worth a look?</p></div>
 <div class="tip"><div class="lbl">Channel etiquette</div><p>Same rule as always: one message, one image, zero pressure. Match each channel's tone — email a touch fuller, DMs casual, SMS reserved for warmer prospects.</p></div>
 </section><section id="bridge">
       <div class="kick"><span class="num">Section 07</span>&nbsp;The bridge</div>
@@ -404,7 +401,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
       <div class="kick"><span class="num">Section 10</span>&nbsp;Objections</div>
       <h2>Objection handling</h2><p class="sub">What's different in writing, plus the same eight</p>
 <h3 class="blk">What's different in writing</h3>
-<div class="card"><h4 style="color:var(--blue);">"Is this some kind of scam? / How'd you get this screenshot?"</h4><p style="margin-top:5px;font-size:15.5px;">"Totally fair to ask — I just pulled it from your public website, the same way any visitor would see it. I do this for [trade]s as part of what I do at Alignment Automations. Happy to hop on a quick call so it's less 'random message' and more a real conversation."</p></div><div class="card"><h4 style="color:var(--blue);">"Just send me a quote"</h4><p style="margin-top:5px;font-size:15.5px;">"Happy to. It's $1,500 to set up and $297/month, everything included, no contract, and it works with the website you already have. I'll send the details now. If anything's unclear once you read it, just ask."</p></div>
+<div class="card"><h4 style="color:var(--blue);">"Is this some kind of scam? / How'd you get this screenshot?"</h4><p style="margin-top:5px;font-size:15.5px;">"Totally fair to ask — I just pulled it from your public website, the same way any visitor would see it. I do this for [trade]s as part of what I do at Primed &amp; Booked. Happy to hop on a quick call so it's less 'random message' and more a real conversation."</p></div><div class="card"><h4 style="color:var(--blue);">"Just send me a quote"</h4><p style="margin-top:5px;font-size:15.5px;">"Happy to. It's $1,500 to set up and $297/month, everything included, no contract, and it works with the website you already have. I'll send the details now. If anything's unclear once you read it, just ask."</p></div>
 <h3 class="blk">Everything else is the same</h3>
 <div class="soft"><div class="eyebrow">The same eight, word for word</div><p style="margin-bottom:8px;">Once you're on a call, every objection works exactly like the video method — swap "the video" for "the screenshot I sent" and the same answers hold:</p>
 <ul style="margin:0;"><li>We're too busy right now</li><li>We already have a website</li><li>It's too expensive</li><li>I tried something like this before and it didn't work</li><li>I can do it myself</li><li>I need to think about it / talk to my partner</li><li>I'm locked into a contract with someone else</li><li>It's my slow season, let's talk later</li></ul></div>
@@ -442,7 +439,7 @@ h4.mini{font-family:'Inter';font-weight:600;font-size:16px;color:var(--navy);mar
 </div>
 <div class="foot">
   <p class="big">Show them the one thing that's costing them jobs. Say it plainly. Point to how it works. Let them come to you.</p>
-  <div class="sm">Alignment Automations · Visual Audit Playbook · v1.0</div>
+  <div class="sm">Primed &amp; Booked · Visual Audit Playbook · v1.0</div>
   <a class="totop" href="#contents">↑ Back to contents</a>
 </div>
 <script>
